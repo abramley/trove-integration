@@ -300,6 +300,9 @@ function cmd_set_datastore() {
     elif [ "$DATASTORE_TYPE" == "couchbase" ]; then
         PACKAGES=${PACKAGES:-"couchbase-server"}
         VERSION="-2.2.0"
+    elif [ "$DATASTORE_TYPE" == "tesora-dve" ]; then
+        PACKAGES=${PACKAGES:-"mysql-server-5.5 tesora-dve"}
+        VERSION="-1.5"
     else
         echo "Unrecognized datastore type. ($DATASTORE_TYPE)"
         exit 1

@@ -1,0 +1,18 @@
+#!/bin/sh
+
+set -e
+set -o xtrace
+
+# Install DVE
+
+# TEMP: get gpg key, add /etc/apt/sources.list.d/tesora.list, then: 
+# apt-get update
+# apt-get -y install tesora-dve
+
+mkdir -p /opt/tesora/dve/server/lib/ext
+
+# Install mysql driver
+
+wget -O /opt/tesora/dve/server/lib/ext/mysql-connector-java-5.1.17.jar \
+     http://repo1.maven.org/maven2/mysql/mysql-connector-java/5.1.17/mysql-connector-java-5.1.17.jar
+chmod 777 /opt/tesora/dve/server/lib/ext
